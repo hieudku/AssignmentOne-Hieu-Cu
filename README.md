@@ -1,4 +1,4 @@
-# AssignmentOne-Hieu-Cu
+# AssignmentOne
 Task 1: Build your own C# Console App - Sales Analysis Application
 1. Introduction: You have been assigned a project to develop a Sales Analysis Application using 
 C#. The application will help a company analyze its sales data to identify trends and make 
