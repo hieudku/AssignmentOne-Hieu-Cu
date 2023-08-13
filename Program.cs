@@ -8,11 +8,12 @@ namespace AssignmentOne_Hieu_Cu
 {
     internal class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             int recordNumber;
             double soldQuant;
             double salesAmount;
+            double totalSales;
             string[] IdArr;
             double[] soldArr;
             double[] salesArr;
@@ -20,38 +21,41 @@ namespace AssignmentOne_Hieu_Cu
             recordNumber = int.Parse(Console.ReadLine());
 
             Console.WriteLine("Please enter the following: ");
-            for (int i = 0; i <= recordNumber; i++)
+            for (int i = 0; i <= recordNumber; i++) // Determine the number of records.
             {
                 Console.WriteLine("Product ID: ");
                 string productId = Console.ReadLine();
                 IdArr = new string[recordNumber];
-                for (int x = 0; x < IdArr.Length; x++)
+                for (int x = 0; x < IdArr.Length; x++) // Iterate & assign each array index as each input value.
                 {
                     IdArr[x] = productId;
+
                 }
 
                 Console.WriteLine("Quantity sold: ");
                 soldQuant = int.Parse(Console.ReadLine());
                 soldArr = new double[recordNumber];
-                for (int y = 0; y < IdArr.Length; y++)
+                for (int y = 0; y < IdArr.Length; y++) // Iterate & assign each array index as each input value.
                 {
                     soldArr[y] = soldQuant;
+
                 }
 
                 Console.WriteLine("Sales amount: ");
                 salesAmount = Convert.ToDouble(Console.ReadLine());
                 salesArr = new double[recordNumber];
-                for (int z = 0; z < IdArr.Length; z++)
+                for (int z = 0; z < IdArr.Length; z++) // Iterate & assign each array index as each input value.
                 {
                     salesArr[z] = salesAmount;
                 }
-                GetTotal(soldQuant, salesAmount);
-            }
-        }
-        static double GetTotal(double sold, double amount)
+                totalSales = Multiply(soldQuant, salesAmount);
+                Console.WriteLine($"Total Sales for product #{productId} is {totalSales}");
+            }// End of recordNumber for loop.
+
+        }// End of Main
+        static double Multiply(double sold, double amount)
         {
             double total = sold * amount;
-            Console.WriteLine($"Total: {total}");
             return total;
         }
     }
