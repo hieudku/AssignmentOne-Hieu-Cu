@@ -103,4 +103,12 @@ namespace AssignmentOne_Hieu_Cu
             return productId;
         }
     }// End of GetHighestSale Class.
+    class GetAverage
+    {
+        public double Average(double[] totalAmountArr)
+        {
+
+            return 0;
+        }
+    }
 }
