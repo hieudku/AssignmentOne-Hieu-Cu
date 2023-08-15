@@ -58,7 +58,7 @@ namespace AssignmentOne_Hieu_Cu
             totalAmountArr = total.GetTotalArr(quantArr, amountArr); // Assign new array to store all total sales amount by calling array method that has quantity and amount as parameters, which then parsed onto the method to calculate.
 
             Console.WriteLine("Total amount in sales: ");
-            for (int t = 0; t < totalAmountArr.Length; t++)
+            for (int t = 0; t < totalAmountArr.Length; t++) // Loop to write each element of the totalAmountArr as total sales. 
             {
                 Console.WriteLine($"Product ID # {productArr[t]} -- {totalAmountArr[t]}  ");
             }
