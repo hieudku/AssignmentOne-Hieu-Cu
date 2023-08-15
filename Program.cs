@@ -107,6 +107,12 @@ namespace AssignmentOne_Hieu_Cu
     {
         public double Average(double[] totalAmountArr)
         {
+            double average;
+            double sum = 0;
+            for (int i =0; i < totalAmountArr.Length; i++)
+            {
+                sum += totalAmountArr[i];
+            }
 
             return 0;
         }
