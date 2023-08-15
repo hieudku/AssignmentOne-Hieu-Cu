@@ -26,6 +26,7 @@ namespace AssignmentOne_Hieu_Cu
         public double salesAmount;
         public double topProd;
         public int highestProd;
+        public double average;
         public double[] productArr;
         public double[] quantArr;
         public double[] amountArr;
@@ -66,6 +67,10 @@ namespace AssignmentOne_Hieu_Cu
             highestProd = highest.HighestSales(totalAmountArr);
             Console.WriteLine($"Product ID with the highest sales: {productArr[highestProd]}");
 
+
+            GetAverage aver = new GetAverage();
+            average = aver.Average(totalAmountArr);
+            Console.WriteLine($"The average sales amount of all products: {average}");
         }
     }//End of Record Class.
     class GetTotalSales // Child class of Record. Parse array to GetTotalArr method.
@@ -113,8 +118,8 @@ namespace AssignmentOne_Hieu_Cu
             {
                 sum += totalAmountArr[i];
             }
-
-            return 0;
+            average = sum / totalAmountArr.Length;
+            return average;
         }
     }
 }
