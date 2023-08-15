@@ -43,6 +43,7 @@ namespace AssignmentOne_Hieu_Cu
             { // For loop to ask for values according to number of records.
                 Console.WriteLine("Enter Product ID: ");
                 prodId = Convert.ToDouble(Console.ReadLine());
+
                 productArr[i] = prodId; // As array index increment, assign the next input to that index.
 
                 Console.WriteLine("Enter Quantity sold: ");
