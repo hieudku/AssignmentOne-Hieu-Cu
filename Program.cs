@@ -48,7 +48,6 @@ namespace AssignmentOne_Hieu_Cu
                 Console.WriteLine("Please enter a valid value (number)");
                 Console.WriteLine("Enter the number of records: ");
             }
-          // Number of records stored in recordsNumber
             productArr = new double[recordsNumber];                 // Create array with size of recordsNumber value entered.
             quantArr = new double[recordsNumber];
             amountArr = new double[recordsNumber];
@@ -61,26 +60,23 @@ namespace AssignmentOne_Hieu_Cu
                     Console.WriteLine("Please enter a valid value (number)");
                     return;
                 }
-                prodId = Convert.ToDouble(Console.ReadLine());
 
                 productArr[i] = prodId;                             // As array index increment, assign the next input to that index.
 
                 Console.WriteLine("Enter Quantity sold: ");
-                if (!ValidationDouble(Console.ReadLine(), out prodId))
+                if (!ValidationDouble(Console.ReadLine(), out quantSold))
                 {
                     Console.WriteLine("Please enter a valid value (number)");
                     return;
                 }
-                quantSold = Convert.ToDouble(Console.ReadLine());
                 quantArr[i] = quantSold;
 
                 Console.WriteLine("Enter Sales amount: ");
-                if (!ValidationDouble(Console.ReadLine(), out prodId))
+                if (!ValidationDouble(Console.ReadLine(), out salesAmount))
                 {
                     Console.WriteLine("Please enter a valid value (number)");
                     return;
                 }
-                salesAmount = Convert.ToDouble(Console.ReadLine());
                 amountArr[i] = salesAmount;
             }
                                                                     /* Class objects constructors and Method calls */
