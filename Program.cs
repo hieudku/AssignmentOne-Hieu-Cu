@@ -48,7 +48,7 @@ namespace AssignmentOne_Hieu_Cu
                 Console.WriteLine("Please enter a valid value (number)");
                 Console.WriteLine("Enter the number of records: ");
             }
-            productArr = new double[recordsNumber];                     // Create array with size of recordsNumber value entered.
+            productArr = new double[recordsNumber];                     // Create arrays with size of recordsNumber value entered.
             quantArr = new double[recordsNumber];
             amountArr = new double[recordsNumber];
 
@@ -78,7 +78,7 @@ namespace AssignmentOne_Hieu_Cu
                 }
                 amountArr[i] = salesAmount;
             }
-                                                                    /* Class objects constructors and Method calls */
+            /* Class objects constructors and Method calls */
             GetTotalSales total = new GetTotalSales();              // Construct object instance of GetTotalSales class.
             totalAmountArr = total.GetTotalArr(quantArr, amountArr);// Assign totalAmountArr to store all total sales amount by calling array method that has quantity and amount as parameters, which then parsed onto the method to calculate.
 
@@ -107,8 +107,8 @@ namespace AssignmentOne_Hieu_Cu
                 totalAmount[i] = quantArr[i] * amountArr[i];        // Iterate through amountArr array to work out each total amount (quantity * amount) of the products according to their index.
             }
             return totalAmount;                                     // Return totalAmount back to where it was called (Record class).
-        }
-    }                                                               // End of GetTotalSales Class.
+        }// End of GetTotalArr method.
+    }// End of GetTotalSales Class.
     class GetHighestSale : Record                                   // Child class of Record.
     {
         public int HighestSales(double[] totalAmountArr) 
@@ -130,8 +130,8 @@ namespace AssignmentOne_Hieu_Cu
                 return productId;
             }
             return productId;
-        }
-    }                                                               // End of GetHighestSale Class.
+        }// End of HighestSales method.
+    }// End of GetHighestSale Class.
     class GetAverage : Record                                       // Child class of Record.
     {
         public double Average(double[] totalAmountArr)              // New array as parameter to store the total amount array parsed into the method.
@@ -144,6 +144,6 @@ namespace AssignmentOne_Hieu_Cu
             }
             average = sum / totalAmountArr.Length;
             return average;
-        }
-    }
+        }// End of Average method.
+    }// End of GetAverage Class.
 }
