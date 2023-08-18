@@ -30,9 +30,24 @@ namespace AssignmentOne_Hieu_Cu
         double[] quantArr;
         double[] amountArr;
         double[] totalAmountArr;
+
+        bool ValidationDouble(string input, out double result)
+        {
+            return double.TryParse(input, out result);
+        }
+        bool ValidationInt(string input, out int result)
+        {
+            return int.TryParse(input, out result);
+        }
+
         public void GetRecord()
         {
             Console.WriteLine("Enter the number of records: ");
+            while(!ValidationInt(Console.ReadLine(), out recordsNumber))
+            {
+                Console.WriteLine("Please enter a valid value (number)");
+                return;
+            }
             recordsNumber = int.Parse(Console.ReadLine());          // Number of records stored in recordsNumber
             productArr = new double[recordsNumber];                 // Create array with size of recordsNumber value entered.
             quantArr = new double[recordsNumber];
@@ -41,15 +56,30 @@ namespace AssignmentOne_Hieu_Cu
             for (int i = 0; i < recordsNumber; i++)
             {                                                       // For loop to ask for values according to number of records.
                 Console.WriteLine("Enter Product ID: ");
+                if (!ValidationDouble(Console.ReadLine(), out prodId))
+                {
+                    Console.WriteLine("Please enter a valid value (number)");
+                    return;
+                }
                 prodId = Convert.ToDouble(Console.ReadLine());
 
                 productArr[i] = prodId;                             // As array index increment, assign the next input to that index.
 
                 Console.WriteLine("Enter Quantity sold: ");
+                if (!ValidationDouble(Console.ReadLine(), out prodId))
+                {
+                    Console.WriteLine("Please enter a valid value (number)");
+                    return;
+                }
                 quantSold = Convert.ToDouble(Console.ReadLine());
                 quantArr[i] = quantSold;
 
                 Console.WriteLine("Enter Sales amount: ");
+                if (!ValidationDouble(Console.ReadLine(), out prodId))
+                {
+                    Console.WriteLine("Please enter a valid value (number)");
+                    return;
+                }
                 salesAmount = Convert.ToDouble(Console.ReadLine());
                 amountArr[i] = salesAmount;
             }
@@ -95,7 +125,7 @@ namespace AssignmentOne_Hieu_Cu
             {
                 if (totalAmountArr[i] > highestSale)                // Compare the current highest sales vs each index of the total sales array.
                 {
-                    highestSale = totalAmountArr[i];                //update the current highest sales every round.
+                    highestSale = totalAmountArr[i];                // Update the current highest sales every round.
                     productId = i;                                  // Also update the ID to the current value of i every round.
                     foundHighest = true;
                 }
