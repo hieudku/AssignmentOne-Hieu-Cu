@@ -95,8 +95,8 @@ namespace AssignmentOne_Hieu_Cu
             GetAverage aver = new GetAverage();                     // Construct object instance of GetAverage class.
             average = aver.Average(totalAmountArr);
             Console.WriteLine($"The average sales amount of all products: ${average:F2}"); // Round average to 2 decimal places.
-        }
-    }                                                               //End of Record Class.
+        }// End of GetRecord method.
+    }// End of Record Class.
     class GetTotalSales : Record                                    // Child class of Record. 
     {
         public double[] GetTotalArr(double[] quantArr, double[] amountArr) // Parse 2 arrays as parameter to store quantity and amount array.
