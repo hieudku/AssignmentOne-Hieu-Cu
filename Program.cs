@@ -55,7 +55,7 @@ namespace AssignmentOne_Hieu_Cu
             for (int i = 0; i < recordsNumber; i++)                     // For loop to ask for values according to number of records.
             {                                                       
                 Console.WriteLine("Enter Product ID: ");
-                while (!ValidationDouble(Console.ReadLine(), out prodId))       // Call validation method to loop and ask for user input until valid.
+                while (!ValidationDouble(Console.ReadLine(), out prodId) || prodId < 0 || prodId == 0)       // Call validation method to loop and ask for user input until valid.
                 {
                     Console.WriteLine("Please enter a valid value (number)");
                     Console.WriteLine("Enter Product ID: ");
@@ -63,7 +63,7 @@ namespace AssignmentOne_Hieu_Cu
                 productArr[i] = prodId;                                         // As array index increment, assign the next input to that index.
 
                 Console.WriteLine("Enter Quantity sold: ");
-                while (!ValidationDouble(Console.ReadLine(), out quantSold))    // Call validation method to loop and ask for user input until valid.
+                while (!ValidationDouble(Console.ReadLine(), out quantSold) || quantSold < 0)    // Call validation method to loop and ask for user input until valid. Only Quantity sold can be zero.
                 {
                     Console.WriteLine("Please enter a valid value (number)");
                     Console.WriteLine("Enter Quantity sold: ");
@@ -71,7 +71,7 @@ namespace AssignmentOne_Hieu_Cu
                 quantArr[i] = quantSold;
 
                 Console.WriteLine("Enter Sales amount: ");
-                while (!ValidationDouble(Console.ReadLine(), out salesAmount))  // Call validation method to loop and ask for user input until valid.
+                while (!ValidationDouble(Console.ReadLine(), out salesAmount) || salesAmount < 0 || salesAmount == 0)  // Call validation method to loop and ask for user input until valid.
                 {
                     Console.WriteLine("Please enter a valid value (number)");
                     Console.WriteLine("Enter Sales amount: ");
