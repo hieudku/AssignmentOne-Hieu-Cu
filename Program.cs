@@ -43,7 +43,7 @@ namespace AssignmentOne_Hieu_Cu
         public void GetRecord()
         {
             Console.WriteLine("Enter the number of records: ");
-            while(!ValidationInt(Console.ReadLine(), out recordsNumber)) // Call validation method to loop and ask for user input until valid.
+            while(!ValidationInt(Console.ReadLine(), out recordsNumber) || recordsNumber < 0 || recordsNumber == 0) // Call validation method to loop and ask for user input until valid.
             {
                 Console.WriteLine("Please enter a valid value (number)");
                 Console.WriteLine("Enter the number of records: ");
@@ -85,7 +85,7 @@ namespace AssignmentOne_Hieu_Cu
             Console.WriteLine("Total amount in sales: ");
             for (int t = 0; t < totalAmountArr.Length; t++)         // Loop to write each element of the totalAmountArr as total sales. 
             {
-                Console.WriteLine($"Product ID # {productArr[t]} -- {totalAmountArr[t]}  ");
+                Console.WriteLine($"Product ID # {productArr[t]} -- ${totalAmountArr[t]:F2}  "); // Round total amounts to 2 decimal places.
             }
 
             GetHighestSale highest = new GetHighestSale();          // Construct object instance of GetHighestlSales class.
@@ -94,7 +94,7 @@ namespace AssignmentOne_Hieu_Cu
 
             GetAverage aver = new GetAverage();                     // Construct object instance of GetAverage class.
             average = aver.Average(totalAmountArr);
-            Console.WriteLine($"The average sales amount of all products: {average}");
+            Console.WriteLine($"The average sales amount of all products: ${average:F2}"); // Round average to 2 decimal places.
         }
     }                                                               //End of Record Class.
     class GetTotalSales : Record                                    // Child class of Record. 
