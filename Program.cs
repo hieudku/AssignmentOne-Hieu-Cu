@@ -31,11 +31,11 @@ namespace AssignmentOne_Hieu_Cu
         double[] amountArr;
         double[] totalAmountArr;
 
-        bool ValidationDouble(string input, out double result)      // Validation check method for double values.
+        bool ValidationDouble(string input, out double result)          // Validation check method for double values.
         {
             return double.TryParse(input, out result);
         }
-        bool ValidationInt(string input, out int result)            // Validation check method for int values.
+        bool ValidationInt(string input, out int result)                // Validation check method for int values.
         {
             return int.TryParse(input, out result);
         }
@@ -43,39 +43,38 @@ namespace AssignmentOne_Hieu_Cu
         public void GetRecord()
         {
             Console.WriteLine("Enter the number of records: ");
-            while(!ValidationInt(Console.ReadLine(), out recordsNumber))
+            while(!ValidationInt(Console.ReadLine(), out recordsNumber)) // Call validation method to loop and ask for user input until valid.
             {
                 Console.WriteLine("Please enter a valid value (number)");
                 Console.WriteLine("Enter the number of records: ");
             }
-            productArr = new double[recordsNumber];                 // Create array with size of recordsNumber value entered.
+            productArr = new double[recordsNumber];                     // Create array with size of recordsNumber value entered.
             quantArr = new double[recordsNumber];
             amountArr = new double[recordsNumber];
 
-            for (int i = 0; i < recordsNumber; i++)
-            {                                                       // For loop to ask for values according to number of records.
+            for (int i = 0; i < recordsNumber; i++)                     // For loop to ask for values according to number of records.
+            {                                                       
                 Console.WriteLine("Enter Product ID: ");
-                if (!ValidationDouble(Console.ReadLine(), out prodId))
+                while (!ValidationDouble(Console.ReadLine(), out prodId))       // Call validation method to loop and ask for user input until valid.
                 {
                     Console.WriteLine("Please enter a valid value (number)");
-                    return;
+                    Console.WriteLine("Enter Product ID: ");
                 }
-
-                productArr[i] = prodId;                             // As array index increment, assign the next input to that index.
+                productArr[i] = prodId;                                         // As array index increment, assign the next input to that index.
 
                 Console.WriteLine("Enter Quantity sold: ");
-                if (!ValidationDouble(Console.ReadLine(), out quantSold))
+                while (!ValidationDouble(Console.ReadLine(), out quantSold))    // Call validation method to loop and ask for user input until valid.
                 {
                     Console.WriteLine("Please enter a valid value (number)");
-                    return;
+                    Console.WriteLine("Enter Quantity sold: ");
                 }
                 quantArr[i] = quantSold;
 
                 Console.WriteLine("Enter Sales amount: ");
-                if (!ValidationDouble(Console.ReadLine(), out salesAmount))
+                while (!ValidationDouble(Console.ReadLine(), out salesAmount))  // Call validation method to loop and ask for user input until valid.
                 {
                     Console.WriteLine("Please enter a valid value (number)");
-                    return;
+                    Console.WriteLine("Enter Sales amount: ");
                 }
                 amountArr[i] = salesAmount;
             }
