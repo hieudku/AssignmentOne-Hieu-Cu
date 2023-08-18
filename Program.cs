@@ -31,11 +31,11 @@ namespace AssignmentOne_Hieu_Cu
         double[] amountArr;
         double[] totalAmountArr;
 
-        bool ValidationDouble(string input, out double result)
+        bool ValidationDouble(string input, out double result)      // Validation check method for double values.
         {
             return double.TryParse(input, out result);
         }
-        bool ValidationInt(string input, out int result)
+        bool ValidationInt(string input, out int result)            // Validation check method for int values.
         {
             return int.TryParse(input, out result);
         }
@@ -46,9 +46,9 @@ namespace AssignmentOne_Hieu_Cu
             while(!ValidationInt(Console.ReadLine(), out recordsNumber))
             {
                 Console.WriteLine("Please enter a valid value (number)");
-                return;
+                Console.WriteLine("Enter the number of records: ");
             }
-            recordsNumber = int.Parse(Console.ReadLine());          // Number of records stored in recordsNumber
+          // Number of records stored in recordsNumber
             productArr = new double[recordsNumber];                 // Create array with size of recordsNumber value entered.
             quantArr = new double[recordsNumber];
             amountArr = new double[recordsNumber];
@@ -145,7 +145,7 @@ namespace AssignmentOne_Hieu_Cu
             double sum = 0;
             for (int i =0; i < totalAmountArr.Length; i++)
             {
-                sum += totalAmountArr[i];
+                sum += totalAmountArr[i];                           // Increment sum from 0 to final amount at the end of array for total value.
             }
             average = sum / totalAmountArr.Length;
             return average;
